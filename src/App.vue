@@ -1,6 +1,9 @@
 <template>
-  <v-app>
-    <LeftDrawer :drawer="drawer.left" />
+  <v-app id="app">
+    <LeftDrawer
+      :drawer="drawer.left"
+      @transitionend="val=>drawer.left=val"
+    />
 
     <AppBar
       @ToggleLeftDrawer="drawer.left=!drawer.left"
@@ -9,22 +12,19 @@
     <v-content>
       <v-container
         fluid
-        fill-height
       >
         <router-view />
       </v-container>
     </v-content>
 
-    <RightDrawer :drawer="drawer.right" />
-
-    <Footer />
+    <!-- <Footer /> -->
   </v-app>
 </template>
 
 <script>
-import LeftDrawer from '@/components/layouts/LeftDrawer';
-import Footer from '@/components/layouts/Footer';
-import AppBar from '@/components/layouts/AppBar';
+import LeftDrawer from '@/views/layouts/LeftDrawer';
+import Footer from '@/views/layouts/Footer';
+import AppBar from '@/views/layouts/AppBar';
 
 export default {
   components: {

@@ -5,6 +5,7 @@ import store from './store';
 import './registerServiceWorker';
 import vuetify from './plugins/vuetify';
 import './plugins/filter';
+import './plugins/vue-moment';
 import services from '@/services/';
 
 // init api services
