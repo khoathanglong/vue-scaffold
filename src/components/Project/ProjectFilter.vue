@@ -7,6 +7,7 @@
       :items="projects"
       rounded
       class="pt-4 mt-4"
+      prepend-inner-icon="mdi-magnify"
     />
   </v-toolbar>
 </template>

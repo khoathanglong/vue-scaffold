@@ -4,10 +4,11 @@
     :items="items"
   >
     <template #item.uploadedAt="{item}">
-      <td class="pl-0">
+      <td
+        class="pl-0 pb-0"
+      >
         {{ item.uploadedAt | moment("YYYY/MM/DD") }}
       </td>
-      <!-- sd -->
     </template>
   </v-data-table>
 </template>
@@ -21,9 +22,9 @@ export default {
         { text: 'File name', value: 'fileName' },
         { text: 'File type', value: 'fileType' },
         { text: 'Patient', value: 'patient' },
-        { text: 'Project', value: 'project' },
         { text: 'Uploaded at', value: 'uploadedAt' },
         { text: 'Status', value: 'status' },
+        { text: 'Size', value: 'size' },
       ],
       items: [
         {
@@ -32,17 +33,17 @@ export default {
           fileType: 'mp3',
           status: 'Incomplete',
           uploadedAt: Date.now(),
-          project: 'Project 1',
           patient: 'Patient 1',
+          size: '96 Kb',
         },
         {
           sequence: 2,
           fileName: 'Checklist',
           fileType: 'text',
           status: 'Completed',
-          project: 'Project 2',
           patient: 'Patient 2',
           uploadedAt: Date.now(),
+          size: '100 Kb',
         },
       ],
     };

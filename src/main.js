@@ -7,7 +7,7 @@ import vuetify from './plugins/vuetify';
 import './plugins/filter';
 import './plugins/vue-moment';
 import services from '@/services/';
-
+import '@/assets/styles/main.scss';
 // init api services
 services.init('api/enpoints', store, router);
 

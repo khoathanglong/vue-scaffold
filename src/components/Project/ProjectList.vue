@@ -1,6 +1,9 @@
 <template>
-  <v-list rounded>
-    <v-list-item-group v-model="selectedProject">
+  <v-list shaped>
+    <v-list-item-group
+      color="primary"
+      v-model="selectedProject"
+    >
       <v-list-item
         v-for="(project, i) in projects"
         :key="i"
