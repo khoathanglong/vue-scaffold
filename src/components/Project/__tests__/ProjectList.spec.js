@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import { shallowMount } from '@vue/test-utils';
-import flushPromises from 'flush-promises';
 import { Store } from 'vuex-mock-store';
 import ProjectList from '../ProjectList.vue';
 import api from '@/services/project.js';
@@ -47,5 +46,9 @@ describe('ProjectList', () => {
     const projectItem = wrapper.findAll('v-list-item-stub').at(0);
     projectItem.trigger('click');
     expect(store.dispatch).toBeCalledWith('project/selectProject', projectId);
+  });
+
+  it('match snapShot', () => {
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
