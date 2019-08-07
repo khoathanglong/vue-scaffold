@@ -91,7 +91,7 @@
 
 <script>
 import FileTable from '@/components/File/FileTable.vue';
-import PatientTable from '@/components/Patient/PatientTable.vue';
+import PatientTable from '@/components/PatientTable/index.vue';
 import FileFilter from '@/components/File/FileFilter.vue';
 
 export default {
