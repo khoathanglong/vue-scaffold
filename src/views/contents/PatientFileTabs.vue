@@ -11,12 +11,7 @@
 
         <v-spacer />
 
-        <!-- <v-autocomplete
-          class="mt-4"
-          prepend-inner-icon="mdi-magnify"
-          label="Search your patients"
-        /> -->
-        <FileFilter />
+        <v-toolbar-title><FileFilter /></v-toolbar-title>
 
         <template #extension>
           <v-tabs

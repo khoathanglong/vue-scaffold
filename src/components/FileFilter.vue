@@ -1,51 +1,23 @@
 <template>
   <div class="file-filter">
-    <div>
-      <v-chip
-        v-if="fileType"
-        close
-      >
-        <strong>
-          {{ fileType }}
-        </strong>
-      </v-chip>
-
-      <v-chip
-        v-if="fileStatus"
-        close
-      >
-        <strong> {{ fileStatus }}</strong>
-      </v-chip>
-    </div>
     <v-autocomplete
-      v-model="filterSelections"
+      v-model="autocomplete"
       class="mt-4"
       prepend-inner-icon="mdi-magnify"
       label="Search your patients"
       :items="items"
-      clearable
+      deletable-chips
       chips
     >
-      <!-- display selections as chips  -->
-      <template #selection="{ attrs, item, select, selected }">
-        <v-chip
-          v-bind="attrs"
-          close
-          @click:close="remove(item)"
-        >
-          <strong>{{ item }}</strong>&nbsp;
-        </v-chip>
-      </template>
-
-      <!-- add filter button -->
+      <!-- add filter button and chips-->
       <template #append-outer>
         <v-menu
           v-model="menu"
           :close-on-content-click="false"
         >
-          <template v-slot:activator="{ on: menu }">
+          <template #activator="{ on: menu }">
             <v-tooltip bottom>
-              <template v-slot:activator="{ on: tooltip }">
+              <template #activator="{ on: tooltip }">
                 <v-btn
                   color="primary lighten-2"
                   v-on="{ ...tooltip, ...menu }"
@@ -61,6 +33,8 @@
               <span>Click to add more filters</span>
             </v-tooltip>
           </template>
+
+
           <v-card>
             <v-list>
               <v-list-item>
@@ -99,6 +73,25 @@
             </v-card-actions>
           </v-card>
         </v-menu>
+        <div>
+          <v-chip
+            v-if="fileType"
+            close
+            @click:close="fileType=''"
+          >
+            <span>
+              {{ fileType }}
+            </span>
+          </v-chip>
+
+          <v-chip
+            v-if="fileStatus"
+            close
+            @click:close="fileStatus=''"
+          >
+            <span> {{ fileStatus }}</span>
+          </v-chip>
+        </div>
       </template>
     </v-autocomplete>
   </div>
@@ -114,16 +107,8 @@ export default {
       fileType: '',
       fileTypeList: ['mp3', 'text'],
       menu: false,
-      filterSelections: 'xxxAudio 10',
+      autocomplete: '',
     };
-  },
-  watch: {
-    fileType(val) {
-      if (val) this.filterSelections.push(val);
-    },
-    fileStatus(val) {
-      if (val) this.filterSelections.push(val);
-    },
   },
 };
 </script>
