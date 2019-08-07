@@ -5,10 +5,10 @@
     clipped
     @input="(val)=>$emit('transitionend', val)"
   >
-    <template #prepend>
+    <!-- <template #prepend>
       <ProjectFilter />
       <v-divider />
-    </template>
+    </template> -->
 
     <template>
       <ProjectList />
@@ -18,12 +18,12 @@
 
 <script>
 import ProjectList from '@/components/Project/ProjectList.vue';
-import ProjectFilter from '@/components/Project/ProjectFilter.vue';
+// import ProjectFilter from '@/components/Project/ProjectFilter.vue';
 
 export default {
   components: {
     ProjectList,
-    ProjectFilter,
+    // ProjectFilter,
   },
   props: {
     drawer: {
