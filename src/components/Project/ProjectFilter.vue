@@ -14,10 +14,14 @@
 
 <script>
 export default {
-  data() {
-    return {
-      projects: ['Project 1', 'Project 2'],
-    };
+  props: {
+    projects: {
+      type: Object,
+      default: () => ({
+        value: 'project 1',
+        text: 'id 1',
+      }),
+    },
   },
 };
 </script>

@@ -18,7 +18,6 @@ const store = new Vuex.Store({
 
 // hot reloading for vuex modules
 if (module.hot) {
-  console.log(modules);
   // accept actions and mutations as hot modules
   module.hot.accept(fileList, () => {
     store.hotUpdate({

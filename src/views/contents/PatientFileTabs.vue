@@ -16,8 +16,6 @@
         <template #extension>
           <v-tabs
             v-model="tab"
-            grow
-            centered
           >
             <v-tabs-slider />
             <v-tab
@@ -92,9 +90,9 @@
 </template>
 
 <script>
-import FileTable from '@/components/FileTable.vue';
-import PatientTable from '@/components/PatientTable.vue';
-import FileFilter from '@/components/FileFilter.vue';
+import FileTable from '@/components/File/FileTable.vue';
+import PatientTable from '@/components/Patient/PatientTable.vue';
+import FileFilter from '@/components/File/FileFilter.vue';
 
 export default {
   components: { FileTable, PatientTable, FileFilter },
