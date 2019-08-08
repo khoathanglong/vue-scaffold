@@ -15,6 +15,7 @@
 
 
     <template #item.uploadButton="{item}">
+      <!-- {{ item }} -->
       <td class="pl-0">
         <UploadButton />
       </td>

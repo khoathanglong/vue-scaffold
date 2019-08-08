@@ -2,7 +2,7 @@
 import { shallowMount } from '@vue/test-utils';
 import { Store } from 'vuex-mock-store';
 import ProjectList from '../ProjectList.vue';
-import api from '@/services/project.js';
+import api from '@/axios/project.js';
 
 const projectId = 'id1';
 const projectName = 'name1';

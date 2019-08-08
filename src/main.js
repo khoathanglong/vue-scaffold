@@ -6,7 +6,7 @@ import './registerServiceWorker';
 import vuetify from './plugins/vuetify';
 import './plugins/filter';
 import './plugins/vue-moment';
-import services from '@/services/';
+import services from '@/axios/';
 import '@/assets/styles/main.scss';
 // init api services
 services.init('api/enpoints', store, router);
