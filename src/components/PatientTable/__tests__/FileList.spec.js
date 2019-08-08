@@ -38,4 +38,8 @@ describe('ProjectFilter', () => {
     expect(wrapper.text()).toContain(files[0].fileName);
     expect(wrapper.text()).toContain('filteredDate');
   });
+
+  it('match snapShopt', () => {
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });
